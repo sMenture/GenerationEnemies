@@ -614,10 +614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint:
-  - {fileID: 1656790865}
-  - {fileID: 1906871590}
-  - {fileID: 456082269}
-  - {fileID: 629591973}
+  - {fileID: 1656790866}
+  - {fileID: 1906871591}
+  - {fileID: 456082270}
+  - {fileID: 629591974}
   _botPrefab: {fileID: 1147894726666451982, guid: 63bedd5da6acffb49813b6b6317580d4, type: 3}
 --- !u!4 &1139951423
 Transform:
