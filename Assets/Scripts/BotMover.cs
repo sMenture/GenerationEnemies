@@ -5,6 +5,7 @@ public class BotMover : MonoBehaviour
     private Vector3 _targetPoint;
     private bool _isWalking;
     private float _moveSpeed = 5;
+    private float _distanceToTarget = 0.1f;
 
     private void Update()
     {
@@ -22,7 +23,7 @@ public class BotMover : MonoBehaviour
             _moveSpeed * Time.deltaTime
         );
 
-        if (Vector3.Distance(transform.position, _targetPoint) < 0.1f)
+        if (transform.position.IsEnoughClose(_targetPoint, _distanceToTarget))
         {
             Stop();
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BotSpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _spawnPoint = new List<GameObject>();
+    [SerializeField] private List<Transform> _spawnPoint = new List<Transform>();
     [SerializeField] private BotMover _botPrefab;
     private float _spawnDelay = 2;
 
@@ -42,7 +42,7 @@ public class BotSpawner : MonoBehaviour
 
     private Vector3 GiveRandomSpawnPosition()
     {
-        return _spawnPoint[UserUtility.GetRandomValue(0, _spawnPoint.Count - 1)].transform.position;
+        return _spawnPoint[UserUtility.GetRandomValue(0, _spawnPoint.Count - 1)].position;
     }
 }
 
