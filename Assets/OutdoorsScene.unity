@@ -531,6 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456082270}
+  - component: {fileID: 456082271}
   m_Layer: 0
   m_Name: Spawn3
   m_TagString: Untagged
@@ -553,6 +554,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 329389378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456082271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456082269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423a40f3a893742a87c67eb4a79e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 629591974}
+  _botType: 0
 --- !u!1 &629591973
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629591974}
+  - component: {fileID: 629591975}
   m_Layer: 0
   m_Name: Spawn4
   m_TagString: Untagged
@@ -584,6 +600,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 329389378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629591975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629591973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423a40f3a893742a87c67eb4a79e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 456082270}
+  _botType: 0
 --- !u!1 &1139951421
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,12 +643,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5108c3c4746f23499dd676eb9713c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoint:
-  - {fileID: 1656790866}
-  - {fileID: 1906871591}
-  - {fileID: 456082270}
-  - {fileID: 629591974}
-  _botPrefab: {fileID: 1147894726666451982, guid: 63bedd5da6acffb49813b6b6317580d4, type: 3}
+  _spawnPoints:
+  - {fileID: 1656790867}
+  - {fileID: 1906871592}
+  - {fileID: 456082271}
+  - {fileID: 629591975}
+  _botType:
+  - _botMover: {fileID: 1147894726666451982, guid: 63bedd5da6acffb49813b6b6317580d4, type: 3}
+    _botType: 0
+  - _botMover: {fileID: 1147894726666451982, guid: 047c713ef6ec70a4ca22a41b89c0d296, type: 3}
+    _botType: 1
 --- !u!4 &1139951423
 Transform:
   m_ObjectHideFlags: 0
@@ -645,6 +679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1656790866}
+  - component: {fileID: 1656790867}
   m_Layer: 0
   m_Name: Spawn1
   m_TagString: Untagged
@@ -667,6 +702,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 329389378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656790867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656790865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423a40f3a893742a87c67eb4a79e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1906871591}
+  _botType: 1
 --- !u!1 &1671428766
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +992,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906871591}
+  - component: {fileID: 1906871592}
   m_Layer: 0
   m_Name: Spawn2
   m_TagString: Untagged
@@ -965,6 +1015,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 329389378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906871592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906871590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56423a40f3a893742a87c67eb4a79e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1656790866}
+  _botType: 1
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1

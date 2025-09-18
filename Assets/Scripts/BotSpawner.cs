@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BotSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _spawnPoint = new List<Transform>();
-    [SerializeField] private BotMover _botPrefab;
+    [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
+    [SerializeField] private PrefabBotType[] _botType;
     private float _spawnDelay = 2;
 
     private void Awake()
@@ -26,23 +27,17 @@ public class BotSpawner : MonoBehaviour
 
     private void CreateBot()
     {
-        BotMover newBot = Instantiate(_botPrefab, transform);
-        Vector3 spawnPosition = GiveRandomSpawnPosition();
-        Vector3 nextPosition = Vector3.zero;
+        SpawnPoint spawnPosition = GiveRandomSpawnPosition();
 
-        do
-        {
-            nextPosition = GiveRandomSpawnPosition();
+        BotMover newBot = Instantiate(_botType.First(bot => bot.BotType == spawnPosition.BotType).BotMover, transform);
 
-        } while (spawnPosition == nextPosition);
-
-        newBot.transform.position = spawnPosition;
-        newBot.MoveToPoint(nextPosition);
+        newBot.transform.position = spawnPosition.transform.position;
+        newBot.MoveToPoint(spawnPosition.Target.position);
     }
 
-    private Vector3 GiveRandomSpawnPosition()
+    private SpawnPoint GiveRandomSpawnPosition()
     {
-        return _spawnPoint[UserUtility.GetRandomValue(0, _spawnPoint.Count - 1)].position;
+        return _spawnPoints[Random.Range(0, _spawnPoints.Count)];
     }
 }
 
